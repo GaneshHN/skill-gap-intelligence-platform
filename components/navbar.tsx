@@ -25,15 +25,12 @@ export function Navbar() {
           <Link href="#how-it-works" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
             How It Works
           </Link>
-          <Link href="#pricing" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
-            Pricing
+          <Link href="/analyze" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
+            Analyze
           </Link>
         </div>
 
         <div className="hidden items-center gap-3 md:flex">
-          <Button variant="ghost" size="sm" asChild>
-            <Link href="/analyze">Sign In</Link>
-          </Button>
           <Button size="sm" asChild>
             <Link href="/analyze">Get Started</Link>
           </Button>
@@ -66,16 +63,13 @@ export function Navbar() {
               How It Works
             </Link>
             <Link
-              href="#pricing"
+              href="/analyze"
               onClick={() => setMobileOpen(false)}
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
-              Pricing
+              Analyze
             </Link>
             <div className="flex gap-3 pt-2">
-              <Button variant="ghost" size="sm" className="flex-1" asChild>
-                <Link href="/analyze">Sign In</Link>
-              </Button>
               <Button size="sm" className="flex-1" asChild>
                 <Link href="/analyze">Get Started</Link>
               </Button>

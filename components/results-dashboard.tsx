@@ -227,7 +227,7 @@ export function ResultsDashboard({ result }: { result: AnalysisResult }) {
           Category Breakdown
         </h3>
         <div className="space-y-4">
-          {["language", "framework", "tool", "concept"].map((cat) => {
+          {["language", "framework", "tool", "concept", "soft-skill"].map((cat) => {
             const catSkills = role.requiredSkills.filter((s) => s.category === cat)
             if (catSkills.length === 0) return null
             const catMatched = catSkills.filter((s) =>

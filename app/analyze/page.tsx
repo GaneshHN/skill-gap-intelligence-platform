@@ -54,7 +54,23 @@ export default function AnalyzePage() {
             <span className="text-lg font-bold text-foreground">LevelUp</span>
           </Link>
 
-          {/* Step indicator */}
+          {/* Step indicator - mobile */}
+          <div className="flex items-center gap-1.5 sm:hidden">
+            {steps.map((s, i) => (
+              <div
+                key={s.id}
+                className={cn(
+                  "h-1.5 rounded-full transition-colors",
+                  i <= currentIndex ? "w-6 bg-primary" : "w-3 bg-secondary"
+                )}
+              />
+            ))}
+            <span className="ml-2 text-xs text-muted-foreground">
+              {currentIndex + 1}/{steps.length}
+            </span>
+          </div>
+
+          {/* Step indicator - desktop */}
           <div className="hidden items-center gap-2 sm:flex">
             {steps.map((s, i) => (
               <div key={s.id} className="flex items-center gap-2">

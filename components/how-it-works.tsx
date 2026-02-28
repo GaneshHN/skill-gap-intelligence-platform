@@ -3,7 +3,7 @@ const steps = [
     number: "01",
     title: "Choose Your Target Role",
     description:
-      "Select from 50+ industry roles like Frontend Developer, Data Scientist, DevOps Engineer, and more.",
+      "Select from 10 industry roles like Frontend Developer, Data Scientist, DevOps Engineer, and more.",
   },
   {
     number: "02",
