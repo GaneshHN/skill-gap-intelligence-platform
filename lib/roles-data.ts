@@ -244,6 +244,27 @@ export const roles: Role[] = [
       { name: "Cost Optimization", category: "concept", importance: "nice-to-have" },
     ],
   },
+  {
+    id: "it-support-admin",
+    title: "IT Support & Systems Admin",
+    category: "Infrastructure",
+    description: "Manage IT infrastructure, user support, and system administration",
+    requiredSkills: [
+      { name: "Windows Server", category: "tool", importance: "critical" },
+      { name: "Linux", category: "tool", importance: "critical" },
+      { name: "Networking", category: "concept", importance: "critical" },
+      { name: "Active Directory", category: "tool", importance: "critical" },
+      { name: "Cloud Services", category: "tool", importance: "important" },
+      { name: "Azure", category: "tool", importance: "important" },
+      { name: "AWS", category: "tool", importance: "important" },
+      { name: "Cybersecurity", category: "concept", importance: "important" },
+      { name: "Backup & Recovery", category: "concept", importance: "critical" },
+      { name: "System Monitoring", category: "concept", importance: "important" },
+      { name: "Help Desk Support", category: "soft-skill", importance: "critical" },
+      { name: "Technical Communication", category: "soft-skill", importance: "important" },
+      { name: "Troubleshooting", category: "soft-skill", importance: "critical" },
+    ],
+  },
 ]
 
 // Comprehensive list of all skills across all roles
@@ -504,6 +525,42 @@ const resourceMap: Record<string, Resource[]> = {
   "Android Development": [
     { title: "Android Developer Guide", type: "documentation", url: "https://developer.android.com/guide", provider: "Google" },
     { title: "Android Basics in Kotlin", type: "course", url: "https://developer.android.com/courses/android-basics-kotlin/course", provider: "Google" },
+  ],
+  "Windows Server": [
+    { title: "Microsoft Learn - Windows Server", type: "documentation", url: "https://learn.microsoft.com/en-us/windows-server/", provider: "Microsoft" },
+    { title: "Windows Server Administration Course", type: "course", url: "https://www.linkedin.com/learning/windows-server-administration-essential-knowledge", provider: "LinkedIn Learning" },
+  ],
+  "Active Directory": [
+    { title: "Active Directory Documentation", type: "documentation", url: "https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/active-directory-domain-services", provider: "Microsoft" },
+    { title: "Active Directory Training", type: "course", url: "https://www.cbtnuggets.com/learn/it-training/microsoft-active-directory", provider: "CBT Nuggets" },
+  ],
+  "Cloud Services": [
+    { title: "Cloud Computing Guide", type: "documentation", url: "https://cloud.google.com/learn/what-is-cloud-computing", provider: "Google Cloud" },
+    { title: "Cloud Computing Fundamentals", type: "course", url: "https://www.coursera.org/learn/cloud-computing", provider: "Coursera" },
+  ],
+  "Cybersecurity": [
+    { title: "NIST Cybersecurity Framework", type: "documentation", url: "https://www.nist.gov/cyberframework", provider: "NIST" },
+    { title: "Cybersecurity Essentials", type: "course", url: "https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/entry-level-certifications/cybersecurity-essentials.html", provider: "Cisco" },
+  ],
+  "Backup & Recovery": [
+    { title: "Backup Strategies Guide", type: "documentation", url: "https://learn.microsoft.com/en-us/windows-server/storage/storage-overview", provider: "Microsoft" },
+    { title: "Disaster Recovery Planning", type: "tutorial", url: "https://www.ibm.com/topics/disaster-recovery", provider: "IBM" },
+  ],
+  "System Monitoring": [
+    { title: "Prometheus Documentation", type: "documentation", url: "https://prometheus.io/docs/", provider: "Prometheus" },
+    { title: "System Monitoring with Grafana", type: "tutorial", url: "https://grafana.com/tutorials/", provider: "Grafana" },
+  ],
+  "Help Desk Support": [
+    { title: "ITIL Foundations", type: "course", url: "https://www.axelos.com/certifications/itil-foundation", provider: "AXELOS" },
+    { title: "Customer Support Best Practices", type: "tutorial", url: "https://www.zendesk.com/blog/support-skills/", provider: "Zendesk" },
+  ],
+  "Technical Communication": [
+    { title: "Technical Writing Course", type: "course", url: "https://www.coursera.org/learn/technical-writing", provider: "Coursera" },
+    { title: "Communication Skills for IT", type: "tutorial", url: "https://www.linkedin.com/learning/communication-skills-for-it-professionals", provider: "LinkedIn Learning" },
+  ],
+  "Troubleshooting": [
+    { title: "Troubleshooting Skills Guide", type: "tutorial", url: "https://www.comptia.org/certifications/a", provider: "CompTIA A+" },
+    { title: "Effective Problem Solving", type: "course", url: "https://www.coursera.org/learn/problem-solving", provider: "Coursera" },
   ],
 }
 
