@@ -28,7 +28,7 @@ export function Hero() {
           Google Maps for your career growth.
         </p>
 
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button size="lg" className="gap-2 px-8 text-base" asChild>
             <Link href="/analyze">
               Analyze My Skills
@@ -36,7 +36,10 @@ export function Hero() {
             </Link>
           </Button>
           <Button variant="outline" size="lg" className="gap-2 px-8 text-base" asChild>
-            <Link href="#how-it-works">See How It Works</Link>
+            <Link href="/student-form">Student Registration</Link>
+          </Button>
+          <Button variant="ghost" size="lg" className="gap-2 px-8 text-base" asChild>
+            <Link href="#how-it-works">How It Works</Link>
           </Button>
         </div>
 
