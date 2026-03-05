@@ -1,6 +1,5 @@
 "use client"
 
-import { useRef, useEffect } from "react"
 import { roles, type Role } from "@/lib/roles-data"
 import { cn } from "@/lib/utils"
 import { Briefcase, Check } from "lucide-react"
@@ -18,18 +17,8 @@ const groupedRoles = roles.reduce<Record<string, Role[]>>((acc, role) => {
 }, {})
 
 export function RoleSelector({ selectedRole, onSelect }: RoleSelectorProps) {
-  const scrollContainerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (selectedRole && scrollContainerRef.current) {
-      setTimeout(() => {
-        scrollContainerRef.current?.scrollIntoView({ behavior: "smooth", block: "center" })
-      }, 100)
-    }
-  }, [selectedRole])
-
   return (
-    <div className="space-y-8" ref={scrollContainerRef}>
+    <div className="space-y-8">
       <div>
         <h2 className="text-2xl font-bold text-foreground">Choose your target role</h2>
         <p className="mt-2 text-muted-foreground">
