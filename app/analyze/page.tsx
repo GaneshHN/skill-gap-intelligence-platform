@@ -28,6 +28,7 @@ export default function AnalyzePage() {
 
   function handleAnalyze() {
     if (!selectedRole) return
+    // Allow analysis even with zero skills - user can skip skill selection
     const analysis = analyzeSkillGap(selectedRole, selectedSkills)
     if (analysis) {
       setResult(analysis)
@@ -160,7 +161,7 @@ export default function AnalyzePage() {
       </main>
 
       {/* Fixed action button bar */}
-      <div className="fixed bottom-6 right-6 flex flex-col gap-2 sm:flex-row">
+      <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-2 sm:flex-row">
         {step === "role" && (
           <Button
             size="lg"
@@ -183,6 +184,15 @@ export default function AnalyzePage() {
             >
               <ArrowLeft className="h-4 w-4" />
               Back
+            </Button>
+            <Button
+              variant="secondary"
+              size="lg"
+              onClick={handleAnalyze}
+              className="gap-2"
+            >
+              Skip & Analyze
+              <ArrowRight className="h-4 w-4" />
             </Button>
             <Button
               size="lg"
