@@ -4,7 +4,7 @@ import { useState, useMemo, useRef, useEffect } from "react"
 import { allSkills, roles } from "@/lib/roles-data"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { X, Search, Plus } from "lucide-react"
+import { X, Search, Plus, Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface SkillInputProps {
@@ -125,9 +125,12 @@ export function SkillInput({ selectedRole, selectedSkills, onSkillsChange }: Ski
                 )}
               >
                 <span className="text-foreground">{skill}</span>
-                {roleSkillNames.includes(skill) && (
-                  <span className="text-xs text-primary">Relevant</span>
-                )}
+                <div className="flex items-center gap-2">
+                  {roleSkillNames.includes(skill) && (
+                    <span className="text-xs text-primary">Relevant</span>
+                  )}
+                  <Plus className="h-3.5 w-3.5 text-muted-foreground" />
+                </div>
               </button>
             ))}
             {query.trim() && !allSkills.some((s) => s.toLowerCase() === query.toLowerCase().trim()) && (
@@ -194,6 +197,26 @@ export function SkillInput({ selectedRole, selectedSkills, onSkillsChange }: Ski
                 <Plus className="h-3 w-3" />
                 {skill}
               </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Show selected skills in a more prominent way */}
+      {selectedSkills.length > 0 && (
+        <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-primary">
+            Selected Skills ({selectedSkills.length})
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {selectedSkills.map((skill) => (
+              <div
+                key={skill}
+                className="flex items-center gap-2 rounded-lg bg-primary/10 px-3 py-1.5 text-sm text-foreground"
+              >
+                <Check className="h-4 w-4 text-primary" />
+                {skill}
+              </div>
             ))}
           </div>
         </div>

@@ -104,10 +104,15 @@ export default function AnalyzePage() {
             ))}
           </div>
 
-          <Button variant="ghost" size="sm" onClick={handleReset}>
-            <RotateCcw className="mr-1.5 h-3.5 w-3.5" />
-            Reset
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button variant="ghost" size="sm" asChild>
+              <Link href="/">Home</Link>
+            </Button>
+            <Button variant="ghost" size="sm" onClick={handleReset}>
+              <RotateCcw className="mr-1.5 h-3.5 w-3.5" />
+              Reset
+            </Button>
+          </div>
         </div>
       </header>
 
