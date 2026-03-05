@@ -46,11 +46,11 @@ export function Hero() {
         {/* Stats bar */}
         <div className="mt-16 grid grid-cols-3 gap-8 border-t border-border/50 pt-8">
           <div>
-            <p className="text-2xl font-bold text-foreground md:text-3xl">10</p>
+            <p className="text-2xl font-bold text-foreground md:text-3xl">21</p>
             <p className="mt-1 text-sm text-muted-foreground">Career Roles</p>
           </div>
           <div>
-            <p className="text-2xl font-bold text-foreground md:text-3xl">60+</p>
+            <p className="text-2xl font-bold text-foreground md:text-3xl">150+</p>
             <p className="mt-1 text-sm text-muted-foreground">Skills Tracked</p>
           </div>
           <div>

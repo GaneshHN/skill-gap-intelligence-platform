@@ -124,17 +124,6 @@ export default function AnalyzePage() {
               selectedRole={selectedRole}
               onSelect={setSelectedRole}
             />
-            <div className="mt-8 flex justify-end">
-              <Button
-                size="lg"
-                disabled={!selectedRole}
-                onClick={() => setStep("skills")}
-                className="gap-2"
-              >
-                Continue
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </div>
           </>
         )}
 
@@ -145,26 +134,6 @@ export default function AnalyzePage() {
               selectedSkills={selectedSkills}
               onSkillsChange={setSelectedSkills}
             />
-            <div className="mt-8 flex justify-between">
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => setStep("role")}
-                className="gap-2"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                Back
-              </Button>
-              <Button
-                size="lg"
-                disabled={selectedSkills.length === 0}
-                onClick={handleAnalyze}
-                className="gap-2"
-              >
-                Analyze Skills
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </div>
           </>
         )}
 
@@ -189,6 +158,44 @@ export default function AnalyzePage() {
           </>
         )}
       </main>
+
+      {/* Fixed action button bar */}
+      <div className="fixed bottom-6 right-6 flex flex-col gap-2 sm:flex-row">
+        {step === "role" && (
+          <Button
+            size="lg"
+            disabled={!selectedRole}
+            onClick={() => setStep("skills")}
+            className="gap-2"
+          >
+            Continue
+            <ArrowRight className="h-4 w-4" />
+          </Button>
+        )}
+
+        {step === "skills" && selectedRole && (
+          <>
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={() => setStep("role")}
+              className="gap-2"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Back
+            </Button>
+            <Button
+              size="lg"
+              disabled={selectedSkills.length === 0}
+              onClick={handleAnalyze}
+              className="gap-2"
+            >
+              Analyze
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </>
+        )}
+      </div>
     </div>
   )
 }
