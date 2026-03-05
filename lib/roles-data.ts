@@ -503,16 +503,20 @@ const resourceMap: Record<string, Resource[]> = {
     { title: "CSS for JavaScript Developers", type: "course", url: "https://css-for-js.dev", provider: "Josh Comeau" },
   ],
   "JavaScript": [
-    { title: "JavaScript.info", type: "tutorial", url: "https://javascript.info", provider: "javascript.info" },
-    { title: "Eloquent JavaScript", type: "book", url: "https://eloquentjavascript.net", provider: "Marijn Haverbeke" },
+    { title: "JavaScript Essentials - Traversy Media", type: "video", url: "https://www.youtube.com/watch?v=hdI2bqOjy3c", provider: "YouTube" },
+    { title: "Modern JavaScript Tutorial", type: "video", url: "https://www.youtube.com/watch?v=jS4aFq5-91M", provider: "YouTube" },
+    { title: "JavaScript Fundamentals", type: "documentation", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide", provider: "MDN Web Docs" },
+    { title: "The Complete JavaScript Course 2024", type: "course", url: "https://www.udemy.com/course/the-complete-javascript-course-2024/", provider: "Udemy" },
   ],
   "TypeScript": [
     { title: "TypeScript Handbook", type: "documentation", url: "https://www.typescriptlang.org/docs/", provider: "Microsoft" },
     { title: "Total TypeScript", type: "course", url: "https://www.totaltypescript.com", provider: "Matt Pocock" },
   ],
   "React": [
-    { title: "React Documentation", type: "documentation", url: "https://react.dev", provider: "Meta" },
-    { title: "React - The Complete Guide", type: "course", url: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/", provider: "Udemy" },
+    { title: "React Basics - Scrimba", type: "video", url: "https://www.youtube.com/watch?v=bMknfKXILEI", provider: "YouTube" },
+    { title: "React Course by freeCodeCamp", type: "video", url: "https://www.youtube.com/watch?v=SqcY0GlETPk", provider: "YouTube" },
+    { title: "React Official Documentation", type: "documentation", url: "https://react.dev", provider: "Meta" },
+    { title: "React Complete Guide", type: "course", url: "https://www.udemy.com/course/react-the-complete-guide-incl-redux/", provider: "Udemy" },
   ],
   "Next.js": [
     { title: "Next.js Documentation", type: "documentation", url: "https://nextjs.org/docs", provider: "Vercel" },

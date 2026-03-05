@@ -14,6 +14,7 @@ import {
   GraduationCap,
   Code,
   Play,
+  Video,
 } from "lucide-react"
 
 const resourceTypeIcons: Record<string, React.ElementType> = {
@@ -22,6 +23,7 @@ const resourceTypeIcons: Record<string, React.ElementType> = {
   tutorial: Play,
   book: BookOpen,
   practice: Code,
+  video: Video,
 }
 
 function ScoreRing({ percentage }: { percentage: number }) {
@@ -286,27 +288,54 @@ export function ResultsDashboard({ result }: { result: AnalysisResult }) {
                     </Badge>
                   </div>
                   <div className="mt-3 space-y-2">
-                    {rec.resources.map((resource) => {
-                      const Icon = resourceTypeIcons[resource.type] || BookOpen
-                      return (
-                        <a
-                          key={resource.title}
-                          href={resource.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-3 rounded-lg bg-background/50 px-3 py-2 text-sm transition-colors hover:bg-background"
-                        >
-                          <Icon className="h-4 w-4 shrink-0 text-primary" />
-                          <div className="min-w-0 flex-1">
-                            <span className="text-foreground">{resource.title}</span>
-                            <span className="ml-2 text-xs text-muted-foreground">
-                              {resource.provider}
-                            </span>
-                          </div>
-                          <ExternalLink className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
-                        </a>
-                      )
-                    })}
+                    {/* Videos first */}
+                    {rec.resources
+                      .filter((r) => r.type === "video")
+                      .map((resource) => {
+                        const Icon = resourceTypeIcons[resource.type] || BookOpen
+                        return (
+                          <a
+                            key={resource.title}
+                            href={resource.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-3 rounded-lg border border-primary/20 bg-primary/5 px-3 py-2 text-sm transition-colors hover:bg-primary/10"
+                          >
+                            <Icon className="h-4 w-4 shrink-0 text-primary" />
+                            <div className="min-w-0 flex-1">
+                              <span className="font-medium text-foreground">{resource.title}</span>
+                              <span className="ml-2 text-xs text-muted-foreground">
+                                {resource.provider}
+                              </span>
+                            </div>
+                            <ExternalLink className="h-3.5 w-3.5 shrink-0 text-primary" />
+                          </a>
+                        )
+                      })}
+                    {/* Other resources */}
+                    {rec.resources
+                      .filter((r) => r.type !== "video")
+                      .map((resource) => {
+                        const Icon = resourceTypeIcons[resource.type] || BookOpen
+                        return (
+                          <a
+                            key={resource.title}
+                            href={resource.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-3 rounded-lg bg-background/50 px-3 py-2 text-sm transition-colors hover:bg-background"
+                          >
+                            <Icon className="h-4 w-4 shrink-0 text-primary" />
+                            <div className="min-w-0 flex-1">
+                              <span className="text-foreground">{resource.title}</span>
+                              <span className="ml-2 text-xs text-muted-foreground">
+                                {resource.provider}
+                              </span>
+                            </div>
+                            <ExternalLink className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
+                          </a>
+                        )
+                      })}
                   </div>
                 </div>
               )
