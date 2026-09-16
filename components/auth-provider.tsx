@@ -19,12 +19,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const supabase = useMemo(() => createClient(), [])
 
   useEffect(() => {
+    let mounted = true
     supabase.auth.getSession().then(({ data }: { data: { session: Session | null } }) => {
+      if (!mounted) return
       setSession(data.session)
       setLoading(false)
     })
-    const { data: listener } = supabase.auth.onAuthStateChange((_event: string, nextSession: Session | null) => setSession(nextSession))
-    return () => listener.subscription.unsubscribe()
+    const { data: listener } = supabase.auth.onAuthStateChange((_event: string, nextSession: Session | null) => {
+      if (!mounted) return
+      setSession(nextSession)
+      setLoading(false)
+    })
+    return () => {
+      mounted = false
+      listener.subscription.unsubscribe()
+    }
   }, [supabase])
 
   const value = useMemo(() => ({
