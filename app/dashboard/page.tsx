@@ -4,10 +4,11 @@ import { AppShell } from "@/components/app-shell"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { ProtectedRoute } from "@/components/protected-route"
 
 export default function DashboardPage() {
   return (
-    <AppShell title="Career Intelligence Dashboard" description="A future-ready home for your profile, resume insights, skill gaps, and learning progress.">
+    <ProtectedRoute><AppShell title="Career Intelligence Dashboard" description="A future-ready home for your profile, resume insights, skill gaps, and learning progress.">
       <main className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-10 sm:px-6">
         <section className="grid gap-4 md:grid-cols-3">
           <Card>
@@ -19,6 +20,6 @@ export default function DashboardPage() {
         </section>
         <Card className="border-primary/20 bg-primary/5"><CardContent className="flex flex-col gap-5 p-6 sm:flex-row sm:items-center sm:justify-between"><div><div className="flex items-center gap-2 text-primary"><Sparkles className="size-4" /><span className="text-sm font-medium">Start with a reliable baseline</span></div><h2 className="mt-2 text-xl font-semibold text-foreground">Run a Quick Skill Analysis before connecting your profile</h2><p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">Your existing analysis flow remains the working entry point while authentication, resume processing, and persistence are connected.</p></div><Button asChild><Link href="/analyze">Open Quick Analysis<ArrowRight data-icon="inline-end" /></Link></Button></CardContent></Card>
       </main>
-    </AppShell>
+    </AppShell></ProtectedRoute>
   )
 }

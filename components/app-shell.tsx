@@ -8,6 +8,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
 import { studentRoutes } from "@/lib/navigation"
+import { useAuth } from "@/components/auth-provider"
 
 interface AppShellProps {
   children: React.ReactNode
@@ -31,6 +32,7 @@ export function LevelUpBrand({ compact = false }: { compact?: boolean }) {
 export function AppShell({ children, title, description, backHref, backLabel = "Back" }: AppShellProps) {
   const pathname = usePathname()
   const activeRoute = studentRoutes.find((route) => route.href === pathname)
+  const { user, signOut } = useAuth()
 
   return (
     <div className="min-h-screen bg-background">
@@ -59,6 +61,7 @@ export function AppShell({ children, title, description, backHref, backLabel = "
             <Button variant="ghost" size="sm" asChild className="hidden sm:inline-flex">
               <Link href="/analyze">Quick Analysis</Link>
             </Button>
+            {user && <Button variant="outline" size="sm" onClick={async () => { await signOut(); window.location.assign("/") }}>Log out</Button>}
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="outline" size="icon" className="md:hidden" aria-label="Open navigation">
