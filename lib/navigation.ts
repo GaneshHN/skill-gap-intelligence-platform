@@ -16,10 +16,10 @@ export const publicRoutes: AppRoute[] = [
 
 export const studentRoutes: AppRoute[] = [
   { href: "/dashboard", label: "Dashboard", description: "Your career intelligence overview", available: true },
-  { href: "/profile", label: "Student Profile", description: "Manage your academic profile", domain: "profile", available: false },
-  { href: "/resume", label: "Resume & Skills", description: "Upload and verify resume skills", domain: "resume", available: false },
-  { href: "/career", label: "Target Career", description: "Choose your target career", domain: "career", available: false },
-  { href: "/roadmap", label: "Learning Roadmap", description: "Follow your personalized roadmap", domain: "roadmap", available: false },
+  { href: "/profile", label: "Student Profile", description: "Manage your academic profile", domain: "profile", available: true },
+  { href: "/resume", label: "Resume & Skills", description: "Upload and verify resume skills", domain: "resume", available: true },
+  { href: "/career", label: "Target Career", description: "Choose your target career", domain: "career", available: true },
+  { href: "/roadmap", label: "Learning Roadmap", description: "Follow your personalized roadmap", domain: "roadmap", available: true },
   { href: "/history", label: "Analysis History", description: "Review previous analyses", domain: "history", available: false },
 ]
 

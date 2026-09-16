@@ -30,7 +30,7 @@ export interface Recommendation {
 
 export interface Resource {
   title: string
-  type: "course" | "documentation" | "tutorial" | "book" | "practice"
+  type: "video" | "course" | "documentation" | "tutorial" | "book" | "practice"
   url: string
   provider: string
 }
@@ -977,14 +977,6 @@ const resourceMap: Record<string, Resource[]> = {
   "Kinematics & Dynamics": [
     { title: "Robot Kinematics Course", type: "course", url: "https://www.coursera.org/learn/kinematics-robotics", provider: "Coursera" },
     { title: "Dynamics of Robots", type: "documentation", url: "https://robotics.stanford.edu/", provider: "Stanford Robotics Lab" },
-  ],
-  "Computer Vision": [
-    { title: "Computer Vision Specialization", type: "course", url: "https://www.coursera.org/specializations/computer-vision", provider: "Coursera" },
-    { title: "OpenCV Tutorials", type: "documentation", url: "https://docs.opencv.org/", provider: "OpenCV" },
-  ],
-  "Machine Learning": [
-    { title: "Machine Learning Specialization", type: "course", url: "https://www.coursera.org/specializations/machine-learning", provider: "Coursera" },
-    { title: "Scikit-learn Documentation", type: "documentation", url: "https://scikit-learn.org/", provider: "Scikit-learn" },
   ],
   "Water Treatment": [
     { title: "Water Treatment Basics", type: "course", url: "https://www.coursera.org/learn/water-treatment", provider: "Coursera" },
