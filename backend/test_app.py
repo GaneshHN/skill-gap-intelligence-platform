@@ -1,11 +1,12 @@
 import os
 import unittest
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 os.environ.setdefault("SUPABASE_URL", "https://example.supabase.co")
 os.environ.setdefault("SUPABASE_SECRET_KEY", "test-secret")
 
-from app import app, extract_text, find_skills
+with patch("supabase.create_client", return_value=Mock()):
+    from backend.app import app, extract_text, find_skills
 
 
 class ResumeServiceTests(unittest.TestCase):
@@ -21,7 +22,7 @@ class ResumeServiceTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             extract_text(b"   ", "text/plain")
 
-    @patch("app.supabase")
+    @patch("backend.app.supabase")
     def test_upload_rejects_empty_file(self, client):
         response = app.test_client().post("/api/resumes", headers={"Authorization": "Bearer token"}, data={"file": (b"", "resume.txt")}, content_type="multipart/form-data")
         self.assertEqual(response.status_code, 400)
