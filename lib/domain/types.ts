@@ -30,6 +30,7 @@ export interface SkillEvidence {
   skillName: string
   source: "profile" | "resume" | "self_reported" | "verified"
   confidence?: number
+  evidence?: string
 }
 
 export interface CareerAnalysisRequest {
