@@ -20,7 +20,9 @@ export const studentRoutes: AppRoute[] = [
   { href: "/resume", label: "Resume & Skills", description: "Upload and verify resume skills", domain: "resume", available: true },
   { href: "/career", label: "Target Career", description: "Choose your target career", domain: "career", available: true },
   { href: "/roadmap", label: "Learning Roadmap", description: "Follow your personalized roadmap", domain: "roadmap", available: true },
-  { href: "/history", label: "Analysis History", description: "Review previous analyses", domain: "history", available: false },
+  { href: "/history", label: "Analysis History", description: "Review previous analyses", domain: "history", available: true },
+  { href: "/progress", label: "Progress", description: "Track roadmap milestones", domain: "roadmap", available: true },
+  { href: "/admin", label: "Admin", description: "Manage the career catalog", available: true },
 ]
 
 export const quickActionRoutes = [
