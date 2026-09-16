@@ -10,7 +10,7 @@ from app import app, extract_text, find_skills
 
 class ResumeServiceTests(unittest.TestCase):
     def test_plain_text_extraction_normalizes_whitespace(self):
-        self.assertEqual(extract_text(b"  React\\n\\n TypeScript  ", "text/plain"), "React TypeScript")
+        self.assertEqual(extract_text(b"  React\n\n TypeScript  ", "text/plain"), "React TypeScript")
 
     def test_skill_matching_is_case_insensitive_and_evidence_backed(self):
         found = find_skills("Built production apps with React and TypeScript.", [{"id": "1", "name": "React", "category": "frontend"}])

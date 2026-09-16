@@ -37,7 +37,7 @@ def extract_text(content: bytes, mime_type: str) -> str:
         text = "\n".join(paragraph.text for paragraph in document.paragraphs)
     else:
         raise ValueError("Unsupported document type")
-    text = re.sub(r"\\s+", " ", text).strip()
+    text = re.sub(r"\s+", " ", text).strip()
     if not text:
         raise ValueError("The resume does not contain readable text")
     return text[:MAX_TEXT_CHARS]
@@ -104,6 +104,10 @@ def upload_resume():
         saved = supabase.table("resumes").insert(row).execute().data[0]
         return jsonify(resume={"id": saved["id"], "fileName": filename, "status": saved["status"], "fileSize": len(content)}), 201
     except Exception:
+        try:
+            supabase.storage.from_("resumes").remove([path])
+        except Exception:
+            pass
         return jsonify(error="The resume could not be uploaded. Please try again."), 500
 
 
