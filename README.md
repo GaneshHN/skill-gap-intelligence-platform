@@ -4,8 +4,6 @@ This is a [Next.js](https://nextjs.org) project bootstrapped
 
 
 
-[Continue working on v0 →](https://v0.app/chat/projects/prj_GpJuTI3DkoCTWc3pxJZz6Y9gwZ4m)
-
 ## Getting Started
 
 First, run the development server:
